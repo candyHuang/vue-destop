@@ -1,0 +1,26 @@
+{
+  "name": "vue-destop",
+  "version": "0.0.1",
+  "description": "destop ui  base elementUI and vue",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/candyHuang/vue-destop.git"
+  },
+  "keywords": [
+    "vue",
+    "destop",
+    "ui"
+  ],
+  "author": "candyHuang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/candyHuang/vue-destop/issues"
+  },
+  "homepage": "https://github.com/candyHuang/vue-destop#readme"
+}
