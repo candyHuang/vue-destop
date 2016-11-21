@@ -48,7 +48,7 @@
   "scripts": {
     "start": "cross-env PROD_ENV=development node build/dev-server.js",
     "build": "cross-env PROD_ENV=test node build/build.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Warning: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
