@@ -46,7 +46,7 @@
     "webpack-merge": "^0.14.1"
   },
   "scripts": {
-    "start": "cross-env PROD_ENV=development node build/dev-server.js",
+    "dev": "cross-env PROD_ENV=development node build/dev-server.js",
     "build": "cross-env PROD_ENV=test node build/build.js",
     "test": "echo \"Warning: no test specified\" "
   },

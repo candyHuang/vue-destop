@@ -14,13 +14,22 @@ exports.entries = function() {
 }
 
 exports.templates = function() {
-  var result = []
   var pagesDir = process.env.NODE_ENV === 'production' 
     ? config.build.pagesDir
     : config.dev.pagesDir
   var pageExt = process.env.NODE_ENV === 'production' 
     ? config.build.pageExt
     : config.dev.pageExt
+  var homeUrl = process.env.NODE_ENV === 'production' 
+    ? './views/home/index.html'
+    : './home/index.html'
+
+  var result = [{
+    template: path.resolve(__dirname, '../src/index.html'),
+    homeUrl: homeUrl,
+    filename: path.join('index.html'),
+    chunks: []
+  }]
 
   App.pages.forEach(m => {
     m.block.forEach(p => {
@@ -32,6 +41,7 @@ exports.templates = function() {
       })
     })
   })
+
   return result
 }
 
