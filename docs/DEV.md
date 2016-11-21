@@ -104,7 +104,7 @@ src
 当前项目采用 [vue.js](http://vuejs.org/) 作为组件化框架.
 采用文件扩展名为 .vue 的 [single-file components(单文件组件)](https://vuefe.cn/guide/single-file-components.html) 形式定义开发组件.
 
-![](vue-component.png)
+![](vue-component-with-preprocessors.png)
 
 
 ## 组件化拆分与CSS选择器命名 
