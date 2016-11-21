@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "6"
+env:
+  global:
+  - GH_PAGES_DEPLOY: YES
+  - REPO_SLUG: candyHuang/vue-destop
+cache:
+  directories:
+  - node_modules
+branches:
+  only:
+  - master
+install:
+  - npm install
+
