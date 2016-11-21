@@ -225,7 +225,7 @@ export default {
 
       currentPage = currentPage || this.pager.currentPage
   		this.loading = true
-      Api.getAppAllAreas({
+      Api.app.getAllAreas({
         pageNo: currentPage
       })
       .then(res => {  

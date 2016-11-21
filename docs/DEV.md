@@ -74,11 +74,13 @@ src
     ```
 
 
-## 规范描述 TODO
+## 模块化开发 
 
-* 所有 ``md`` 后缀的文件(比如README.md), 不发布
+* 采用 ES6 的模块系统，通过``webpack``相关 ``loader``编译加载。
+* ES6 的模块自动开启严格模式，即使你没有写 ``'use strict'``。
+* 你可以在模块中使用 ``import`` 和 ``export``。
 
-## 模块化开发 TODO
+> 更多信息，请查看[ES6模块系统相关资料](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) [ES6 Module](http://es6.ruanyifeng.com/#docs/module)
 
 
 ## 模块路径
@@ -91,14 +93,46 @@ src
 
 |文件路径|模块路径绝对定位|
 |-------|-----|
-|src/foo.js|/src/foo.js|
-|src/components/foo.js|/components/foo.js|
-|src/assets/foo/foo.js|/assets/foo/foo.js|
+|src/foo.js|src/foo.js|
+|src/components/foo.js|components/foo.js|
+|src/assets/foo/foo.js|assets/foo/foo.js|
 
 总之, ``src``,``components``,``assets``可以用绝对路径标示，方便应对页面层级路径过深的情况
 
-## 组件化开发 TODO
+## 组件化开发 
+
+当前项目采用 [vue.js](http://vuejs.org/) 作为组件化框架.
+采用文件扩展名为 .vue 的 [single-file components(单文件组件)](https://vuefe.cn/guide/single-file-components.html) 形式定义开发组件.
+
+![](vue-component.png)
 
 
-## 组件化拆分与CSS选择器命名 TODO
+## 组件化拆分与CSS选择器命名 
+
+组件化拆分以 ``BEM`` 作为标准, 所有可独立运行的UI组件均平级存放在 ``components`` 目录下, 每个UI组件内最外层都应该有一层元素包裹, 其class命名为 ``w-组件名``, 其中的 元素(BEM中的E, Element)应以 ``w-组件名`` 为前缀, 比如:
+
+```css
+.w-header { ... }
+.w-header_title { ... }
+.w-header_menu { ... }
+```
+
+对应的HTML内容为:
+
+```html
+<div class="w-header">
+    <h1 class="w-header_title">{{title}}</h1>
+    <button class="w-header_menu">菜单</button>
+</div>
+```
+
+可能大家会有疑问, 什么不这样写呢:
+
+```css
+.w-header { ... }
+.w-header .title { ... }
+.w-header .menu { ... }
+```
+
+因为组件与组件是会相互组合使用的, 如果在 .w-header 中有 .title 的定义, 如果header组件组合了其他组件也有自定义的 .title 元素, 其样式就会相互影响.
 
