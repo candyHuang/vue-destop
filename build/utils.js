@@ -14,12 +14,14 @@ exports.entries = function() {
 }
 
 exports.templates = function() {
-  var pagesDir = process.env.NODE_ENV === 'production' 
-    ? config.build.pagesDir
-    : config.dev.pagesDir
-  var pageExt = process.env.NODE_ENV === 'production' 
-    ? config.build.pageExt
-    : config.dev.pageExt
+  var ev = process.env.NODE_ENV === 'production' ? 'build' : 'dev'
+  var tplConf = config[ev]
+  var pagesDir = tplConf.pagesDir
+  var pageExt = tplConf.pageExt
+  var basePath = tplConf.basePath
+
+  
+
   var homeUrl = process.env.NODE_ENV === 'production' 
     ? './views/home/index.html'
     : './home/index.html'
@@ -31,10 +33,12 @@ exports.templates = function() {
     chunks: []
   }]
 
+
   App.pages.forEach(m => {
     m.block.forEach(p => {
       result.push({
         title: p.title,
+        basePath: basePath,
         filename: path.join(pagesDir, p.entry + '.' + pageExt),
         template: path.resolve(__dirname, '../index.html'),
         chunks: ['vendor', 'manifest', p.entry]

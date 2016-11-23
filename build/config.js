@@ -18,6 +18,7 @@ module.exports = {
     productionGzip: false,
     productionGzipExtensions: ['js', 'css'],
     // multi pages
+    basePath: '/vue-destop',
     targetRoot: path.resolve(__dirname, '../../test/webapp'),
     autoDeploy: false,
     pagesDir: 'views',
@@ -48,6 +49,8 @@ module.exports = {
     // just be aware of this issue when enabling this option.
     cssSourceMap: false,
     // multi pages
+    // basePath: '/\<%=basePath %\>',
+    basePath: '',
     pagesDir: '',
     pageExt: 'html'
 

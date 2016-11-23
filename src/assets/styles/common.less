@@ -1,62 +1,53 @@
+@import "var.less";
+
+// reset
 * {
 	box-sizing: border-box;
 }
+
 html, body {
 	height: 100%;
 }
+
 body {
-  font-family: Helvetica, sans-serif;
   padding: 0;
   margin: 0;
-  background: #e4e6e8;
+  font: 12px/1.5 @fontDefault;
+  background: @bgColorDefault;
 }
 
-
-// layout
-.layout-aside {
-	position: relative;
-	min-height: 100%;
+input, textarea, keygen, select, button {
+  font-family:  @fontDefault;
 }
 
-.layout-main {
-	margin-left: 230px;
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.layout-breadcrumb {
-	margin: 10px 0 -14px 24px;
-}
-
-.layout-container {
-	margin: 24px 16px;
-	// padding: 10px;
-	// background: #fff;
-	min-height: 700px;
-}
-
-// 高搜
-.advanced-search-form {
-	padding: 30px;
-  margin-bottom: 30px;
-  background: #fff;
-  .el-form-item__label {
-    // color: #333;
+// reset element-ui
+.el-table .cell {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  .el-button-group {
+    vertical-align: middle;
   }
+  // .el-button--small {
+  //   padding: 7px 11px;
+  // }
 }
 
-.search-form-tools {
-  text-align: right;
-
-  .search-form-toggle {
-    float: left;
-    padding-left: 0;
-    font-size: 12px;
-  }
-
-  .search-form-btn + .search-form-btn {
-    margin-left: 20px;
-  }
+.el-table__fixed-header-wrapper thead div, 
+.el-table__header-wrapper thead div {
+  background-color: @bgColorTableHeader;
+  color: #475669;
+  font-weight: normal;
 }
 
+.el-table th {
+  background-color: @bgColorTableHeader;
+}
 
 // common 
 .text-right {
@@ -71,6 +62,14 @@ body {
   vertical-align: middle;
 }
 
+.ellipsis {
+  .ellipsis();
+}
+
+.clearfix {
+  .clearfix();
+}
+
 // table
 .pagination-wrapper {
   padding-top: 20px;
@@ -79,6 +78,4 @@ body {
   background-color: #fff;
 }
 
-table .cell .el-button-group {
-  vertical-align: middle;
-}
+

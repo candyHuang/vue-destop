@@ -1,0 +1,62 @@
+/**
+ * variable
+ */
+// font
+@fontDefault: "Microsoft YaHei","\5b8b\4f53", tahoma, arial, "Hiragino Sans GB";
+
+//padding
+@defaultPadding: 30px;
+
+// layout
+@layoutSidebarWidth: 230px;
+@layoutHeaderHeight: 32px;
+@layoutToolBarHeight: 60px;
+
+
+// color
+@primaryColor: #20a0ff;
+@grayColor: #8492a6;
+
+@bgColorDefault: #FDFEFF;
+@bgColorAside: #333;
+@bgColorHeader: #324057;
+@bgColorToolbar: #EFF2F7;
+@bgColorTableHeader: #E5E9F2;
+
+@textColorLabel: #475669;
+
+//button
+@btnPrimaryColor: #20a0ff;
+@btnLightColor: #50BFFF;
+@btnLineHeight: @layoutToolBarHeight;
+
+
+// z-index
+@zIndexTop: 1000;
+
+// line
+@lineColorGray: #E0E6ED;
+
+/**
+ * mixin
+ */
+
+// text
+.ellipsis(@w:auto) {
+  width: @w;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.clearfix() {
+  &:after,
+  &:before, {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
