@@ -9,7 +9,7 @@
     - [ ] 功能列表
     - [ ] 原型设计
     - [ ] 界面设计
-- [x] 技术选型
+- [x] 技术选型(2016-11-20)
     - [x] 构建工具: [webpack](https://webpack.github.io/)
     - [x] 模块化规范: [ECMAScript 2015](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015)
     - [x] 模块化框架: [webpack](https://webpack.github.io/)
