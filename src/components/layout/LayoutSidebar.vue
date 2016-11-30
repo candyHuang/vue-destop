@@ -1,12 +1,12 @@
 <template>
 	<div class="w-layout-aside">
 		<h1>MFtour</h1>
-    <el-menu class="el-menu-vertical-demo" theme="dark" @select="selectActive" @open="handleopen" @close="handleclose" :unique-opened="true" :default-active="activeOpenObj.activeOpen">
+    <el-menu class="el-menu-vertical-demo" theme="dark" :unique-opened="true" :default-active="activeOpenObj.activeOpen">
       <el-submenu v-for="(m, index) in pages" :index="index + ''">
         <template slot="title"><i class="el-icon-message"></i>{{m.title}}</template>
 
         <el-menu-item v-for="(p, innerIndex) in m.block" :index="index + '-' + innerIndex">
-          <a class="sidebar-link" :href="'/' + p.entry + '.html'">{{p.title}}</a>
+          <a class="sidebar-link" :href="getLinkUrl(p)">{{p.title}}</a>
         </el-menu-item>
       </el-submenu>
     </el-menu>
@@ -61,29 +61,9 @@
         }
       }
     },
-    created: function() {
-      // 解决页面跳转菜单高亮的问题
-      var localhost = window.location.href.split('//')[1]
-      var str = localhost.substring(localhost.indexOf('/') + 1, localhost.indexOf('.'))
-      var obj = this.activeOpenObj
-
-      this.pages.forEach(function(el) {
-        el.block.forEach(function(el) {
-          if (el.entry == str) {
-            obj.activeOpen = el.pageId
-          }
-        })
-      })
-    },
-  	methods: {
-  		handleopen(index, indexPath) {
-
-  		},
-  		handleclose(index, indexPath) {
-
-  		},
-      selectActive(index) {
-        
+    methods: {
+      getLinkUrl(p) {
+        return (window.GLOBLE_BASE || '') + '/' + p.entry + '.html'
       }
   	}
   }
