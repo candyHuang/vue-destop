@@ -11,6 +11,11 @@
 <style lang="less">
   @import '../../assets/styles/var.less'; 
   .w-panel__table {
-    margin: 0 (-1px - @defaultPadding);
+    margin: 0 (-@defaultPadding);
+
+    > .el-table {
+      margin-left: -1px;
+      margin-right: -1px;
+    }
   }
 </style>

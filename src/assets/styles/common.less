@@ -3,6 +3,7 @@
 // reset
 * {
 	box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 html, body {
@@ -16,8 +17,9 @@ body {
   background: @bgColorDefault;
 }
 
-input, textarea, keygen, select, button {
+input, textarea, keygen, select, button, textarea {
   font-family:  @fontDefault;
+  resize: none;
 }
 
 ul, li {
@@ -49,7 +51,52 @@ ul, li {
   background-color: @bgColorTableHeader;
 }
 
+
+.el-dialog--small {
+  width: 600px;
+}
+
+.el-dialog__header {
+  padding-bottom: 20px;
+  background-color: @bgColorDefault;
+  border-bottom: 1px solid @lineColorGray;
+}
+
+.el-dialog__body {
+  padding-left: 50px;
+  padding-right: 50px; 
+  padding-bottom: 10px;
+}
+
+.el-dialog__title {
+  // font-weight: normal;
+}
+
+.el-dialog__footer {
+  padding: 20px;
+  border-top: 1px solid @lineColorGray;
+  background-color: @bgColorDefault;
+
+  .el-button {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
 // common 
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.block {
+  display: block;
+}
+
 .text-right {
 	text-align: right;
 }

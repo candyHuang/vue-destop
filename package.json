@@ -1,14 +1,17 @@
 {
   "name": "vue-destop",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "destop ui  base elementUI and vue",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.15.2",
     "element-ui": "^1.0.3",
     "es6-promise": "^4.0.5",
+    "photoswipe": "^4.1.1",
     "vue": "^2.1.0",
-    "vue-router": "^2.0.1"
+    "vue-popup": "^0.2.12",
+    "vue-router": "^2.0.1",
+    "wind-dom": "0.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

@@ -10,15 +10,24 @@ import LayoutSidebar from 'components/layout/LayoutSidebar.vue'
 import LayoutMain from 'components/layout/LayoutMain.vue'
 import LayoutToolbar from 'components/layout/LayoutToolbar.vue'
 import Panel from 'components/panel/Panel.vue'
-import PanelTable from 'components/panel/PanelTable.vue'
+import PanelTable from './components/panel/PanelTable.vue'
 import DiamondButton from 'components/button/DiamondButton.vue'
 import ButtonGroup from 'components/button/ButtonGroup.vue'
 import TabsLink from 'components/tabs-link/TabsLink.vue'
 import TabsLinkItem from 'components/tabs-link/TabsLinkItem.vue'
-
-
+import RowBox from 'components/RowBox.vue'
+import Cascader from 'components/cascader/Cascader.vue'
 import SearchForm from 'components/form/SearchForm.vue'
 import SearchFormToggle from 'components/form/SearchFormToggle.vue'
+import TableCell from 'components/table-cell/TableCell.vue'
+import TableCellItem from 'components/table-cell/TableCellItem.vue'
+import TableTip from 'components/table-cell/TableTip.vue'
+import Divider from 'components/Divider.vue'
+import LabelGrid from 'components/LabelGrid.vue'
+import ImageUpload from 'components/upload/ImageUpload.vue'
+
+
+
 
 import './assets/styles/common.less'
 import Api from './api/index.js'
@@ -43,16 +52,25 @@ Vue.component(SearchForm.name, SearchForm)
 Vue.component(SearchFormToggle.name, SearchFormToggle)
 Vue.component(TabsLink.name, TabsLink)
 Vue.component(TabsLinkItem.name, TabsLinkItem)
+Vue.component(RowBox.name, RowBox)
+Vue.component(Cascader.name, Cascader)
+Vue.component(TableCell.name, TableCell)
+Vue.component(TableCellItem.name, TableCellItem)
+Vue.component(TableTip.name, TableTip)
+Vue.component(Divider.name, Divider)
+Vue.component(LabelGrid.name, LabelGrid)
+Vue.component(ImageUpload.name, ImageUpload)
+
 
 export default {
-	init(app, routes = []) {
+  init(app, routes = []) {
     const router = new VueRouter({
       routes
     })
     
-		return new Vue({
+    return new Vue({
       router,
-		  render: h => h(app)
-		}).$mount('#app')
-	}
+      render: h => h(app)
+    }).$mount('#app')
+  }
 }
